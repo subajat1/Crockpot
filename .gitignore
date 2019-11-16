@@ -1,4 +1,11 @@
+# Django specific crockpot
 static/
+
+# GCP Deploy
+settings.py.gcp_template
+.gcloudignore
+app.yaml
+main.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
