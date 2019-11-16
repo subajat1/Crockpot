@@ -3,6 +3,8 @@ from django.utils.text import slugify
 
 
 class Benefit(models.Model):
+    name = models.CharField(max_length=512, null=True, blank=True)
+    media = models.CharField(max_length=1024, null=True, blank=True)
     health = models.DecimalField(max_digits=5, decimal_places=2, blank=True)
     hunger = models.DecimalField(max_digits=5, decimal_places=2, blank=True)
     sanity = models.DecimalField(max_digits=5, decimal_places=2, blank=True)
@@ -14,6 +16,8 @@ class Benefit(models.Model):
         verbose_name = 'Benefit'
         verbose_name_plural = 'Benefits'
 
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=512, null=True, blank=True)
@@ -84,6 +88,7 @@ class Recipe(models.Model):
     store = models.ManyToManyField('Store', related_name='recipe_store')
     cook_time = models.DecimalField(max_digits=5, decimal_places=2, blank=True)
     ingredients = models.ManyToManyField('Ingredient', related_name='recipe_ingredient')
+    restrictions = models.CharField(max_length=1024, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     log = models.TextField(blank=True, null=True, default='')

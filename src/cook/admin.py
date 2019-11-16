@@ -4,6 +4,7 @@ from . import models
 
 class BenefitAdmin(admin.ModelAdmin):
     list_display = (
+        'name',
         'health',
         'hunger',
         'sanity',
