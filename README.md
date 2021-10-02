@@ -8,6 +8,7 @@ For backend services providing recipes and their ingredients, which frontend can
 
 ## How to use
 * WIP
+* update
 
 ## References
 * https://dontstarve.fandom.com/wiki/Crock_Pot
